@@ -2,190 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khushi Agrawal | MSCS @ ASU</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Playfair+Display:italic,wght@700&display=swap');
-
-        :root { --bg: #0a0a0a; --text: #e5e5e5; --accent: #4f46e5; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
-        
-        .serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
-        .outline-text { -webkit-text-stroke: 1px rgba(255,255,255,0.2); color: transparent; }
-        
-        /* Subtle Grid Background like the reference */
-        .bg-grid {
-            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 80px 80px;
-        }
-
-        .section-label { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #666; }
-        .resume-btn:hover { background: white; color: black; transform: translateY(-3px); transition: all 0.4s ease; }
-    </style>
+    <title>Khushi Agrawal | 3D Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
-<body class="bg-grid">
+<body>
+    <div id="loader">
+        <h1 class="reveal-text">KHUSHI AGRAWAL</h1>
+        <button id="enter-btn">ENTER WORLD</button>
+    </div>
 
-    <div id="cursor" class="fixed w-4 h-4 bg-white rounded-full pointer-events-none z-[999] mix-blend-difference hidden md:block"></div>
+    <canvas id="bg-canvas"></canvas>
 
-    <nav class="fixed top-0 w-full p-8 flex justify-between items-end z-50 mix-blend-difference">
-        <div class="text-xl font-bold tracking-tighter">KHUSHI<span class="text-indigo-500">.</span></div>
-        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em]">
-            <a href="#about" class="hover:opacity-50">About</a>
-            <a href="#work" class="hover:opacity-50">Work</a>
-            <a href="#contact" class="hover:opacity-50">Contact</a>
-        </div>
-    </nav>
-
-    <section class="h-screen flex flex-col justify-center px-10 md:px-24">
-        <span class="section-label mb-4 block">Based in Tempe, Arizona</span>
-        <h1 class="text-[12vw] md:text-[8vw] leading-[0.9] font-bold uppercase tracking-tighter overflow-hidden">
-            <span class="reveal">Software</span><br>
-            <span class="reveal outline-text">Engineer</span><br>
-            <span class="reveal">& <span class="serif-italic lowercase font-normal">Creative</span></span>
-        </h1>
-        <div class="mt-12 max-w-md">
-            <p class="text-slate-400 text-lg leading-relaxed">
-                <b>Khushi Agrawal.</b> Pursuing MSCS at ASU. Architecting high-scale data systems and AI pipelines with a 4.0 GPA.
-            </p>
-        </div>
-    </section>
-
-    <section id="about" class="py-32 px-10 md:px-24 border-t border-white/10">
-        <div class="grid md:grid-cols-2 gap-20">
-            <div>
-                <span class="section-label mb-10 block">01 / Profile</span>
-                <div class="w-full aspect-[4/5] bg-[#111] rounded-sm overflow-hidden border border-white/10 relative">
-                    <img src="https://via.placeholder.com/800x1000" alt="Me" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                    <div class="absolute bottom-4 left-4 text-[10px] uppercase font-bold text-white/40">Portrait Placeholder</div>
-                </div>
+    <div id="overlay-about" class="overlay hidden">
+        <div class="glass">
+            <h2>About Me</h2>
+            <p>MSCS Student @ ASU | GPA 4.0</p>
+            <div class="hobbies">
+                <span>🍳 Cooking</span> <span>🎨 Painting</span> <span>💃 Dancing</span>
             </div>
-            <div class="flex flex-col justify-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">I bridge the gap between <span class="serif-italic font-light">logic</span> and <span class="serif-italic font-light">imagination</span>.</h2>
-                <p class="text-xl text-slate-300 mb-10 leading-relaxed">
-                    While I specialize in <b>Data Engineering</b> (processing 2M+ records) and <b>AI</b> (LLMind 96% accuracy), my soul thrives in creativity.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <div class="px-6 py-3 border border-white/20 rounded-full text-xs font-bold uppercase">🥘 Cooking</div>
-                    <div class="px-6 py-3 border border-white/20 rounded-full text-xs font-bold uppercase">🎨 Painting</div>
-                    <div class="px-6 py-3 border border-white/20 rounded-full text-xs font-bold uppercase">💃 Dancing</div>
-                </div>
-            </div>
+            <button onclick="moveCharacter('projects')">View My Projects →</button>
         </div>
-    </section>
+    </div>
 
-    <section id="work" class="py-32 border-t border-white/10 overflow-hidden">
-        <div class="px-10 md:px-24 mb-20">
-            <span class="section-label mb-4 block">02 / Experience</span>
-            <h2 class="text-6xl md:text-8xl font-bold tracking-tighter">SELECTED WORK</h2>
+    <div id="overlay-projects" class="overlay hidden">
+        <div class="glass">
+            <h2>Selected Builds</h2>
+            <ul>
+                <li><b>LLMind:</b> 96.5% Sentiment Accuracy</li>
+                <li><b>Online Judge:</b> Docker-based Execution</li>
+            </ul>
+            <button onclick="moveCharacter('about')">← Back to Desk</button>
         </div>
-        
-        <div class="flex flex-col gap-1 px-10 md:px-24">
-            <div class="group py-10 border-b border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-white/5 transition px-4 cursor-pointer">
-                <div>
-                    <span class="text-slate-500 text-sm font-mono mb-2 block">2025 — Present</span>
-                    <h3 class="text-3xl md:text-5xl font-bold group-hover:pl-4 transition-all">DRUVSTAR</h3>
-                </div>
-                <div class="text-right">
-                    <p class="text-indigo-400 font-bold uppercase tracking-widest text-xs">Data Analyst Intern</p>
-                    <p class="text-slate-400 text-sm mt-1">AWS • Python • 2M+ Records Daily</p>
-                </div>
-            </div>
-            <div class="group py-10 border-b border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-white/5 transition px-4 cursor-pointer">
-                <div>
-                    <span class="text-slate-500 text-sm font-mono mb-2 block">2022 — 2023</span>
-                    <h3 class="text-3xl md:text-5xl font-bold group-hover:pl-4 transition-all">ATALOUD TECH</h3>
-                </div>
-                <div class="text-right">
-                    <p class="text-indigo-400 font-bold uppercase tracking-widest text-xs">Full Stack Intern</p>
-                    <p class="text-slate-400 text-sm mt-1">ReactJS • 120+ Screens • 10K+ Users</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <section class="py-32 px-10 md:px-24 bg-white text-black">
-        <span class="section-label mb-10 block !text-black/40">03 / Projects</span>
-        <div class="grid md:grid-cols-2 gap-20">
-            <div class="reveal-up">
-                <div class="bg-gray-100 aspect-square mb-6 overflow-hidden">
-                    <i class="fas fa-brain text-8xl p-20 opacity-10"></i>
-                </div>
-                <h4 class="text-3xl font-bold">LLMind Agent</h4>
-                <p class="mt-4 text-gray-600">Sentiment-driven financial forecasting with 96.5% accuracy using FinBERT and Spark.</p>
-            </div>
-            <div class="reveal-up" style="margin-top: 100px;">
-                <div class="bg-gray-100 aspect-square mb-6 overflow-hidden">
-                    <i class="fas fa-code text-8xl p-20 opacity-10"></i>
-                </div>
-                <h4 class="text-3xl font-bold">Secure Online Judge</h4>
-                <p class="mt-4 text-gray-600">Docker-containerized code execution system for 100+ concurrent users.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="resumes" class="py-32 px-10 md:px-24 border-t border-white/10">
-        <span class="section-label mb-10 block">04 / Artifacts</span>
-        <h2 class="text-5xl md:text-7xl font-bold mb-16 tracking-tighter uppercase">Resume <br><span class="serif-italic lowercase font-light">Collections</span></h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <a href="resumes/Resume_ML:AI_Template.docx" class="resume-btn border border-white/20 p-8 rounded-sm block group">
-                <span class="text-[10px] text-slate-500 block mb-4 italic">01 / Artificial Intelligence</span>
-                <span class="text-2xl font-bold">AI / ML Engineer</span>
-            </a>
-            <a href="resumes/Resume_Data Engineering_Template.docx" class="resume-btn border border-white/20 p-8 rounded-sm block group">
-                <span class="text-[10px] text-slate-500 block mb-4 italic">02 / Data Systems</span>
-                <span class="text-2xl font-bold">Data Engineer</span>
-            </a>
-            <a href="resumes/Resume_SDE_Templte.docx" class="resume-btn border border-white/20 p-8 rounded-sm block group">
-                <span class="text-[10px] text-slate-500 block mb-4 italic">03 / Software Architecture</span>
-                <span class="text-2xl font-bold">Software Engineer</span>
-            </a>
-        </div>
-    </section>
-
-    <footer id="contact" class="py-20 px-10 md:px-24 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-        <div class="text-center md:text-left mb-10 md:mb-0">
-            <p class="section-label mb-4">Contact</p>
-            <a href="mailto:kagraw22@asu.edu" class="text-4xl md:text-6xl font-bold hover:opacity-50 transition">kagraw22@asu.edu</a>
-        </div>
-        <div class="flex gap-10">
-            <a href="https://linkedin.com/in/khushi-agrawal-83aa0a202/" class="text-sm font-bold uppercase tracking-widest">LinkedIn</a>
-            <a href="#" class="text-sm font-bold uppercase tracking-widest">GitHub</a>
-        </div>
-    </footer>
-
-    <script>
-        // Custom Cursor Logic
-        const cursor = document.querySelector('#cursor');
-        document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
-        });
-
-        // GSAP Reveal Animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from(".reveal", {
-            y: 100,
-            opacity: 0,
-            duration: 1.5,
-            stagger: 0.2,
-            ease: "power4.out"
-        });
-
-        gsap.utils.toArray(".reveal-up").forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: el,
-                y: 50,
-                opacity: 0,
-                duration: 1.2,
-                ease: "power3.out"
-            });
-        });
-    </script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
