@@ -3,136 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khushi Agrawal | MSCS @ ASU</title>
+    <title>Khushi Agrawal | Engineer & Creator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        body { background-color: #0f172a; color: #f1f5f9; }
-        .project-card:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: #60a5fa; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        :root { --accent: #6366f1; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #fff; }
+        
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .text-gradient { background: linear-gradient(to right, #818cf8, #c084fc, #fb7185); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .interest-chip { background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); }
+        
+        /* Fix for bold text rendering */
+        b, strong { font-weight: 800 !important; color: #fff !important; }
+        
+        .nav-link:hover { color: var(--accent); transition: 0.3s; }
+        .hero-shape { position: absolute; filter: blur(80px); opacity: 0.4; z-index: -1; }
     </style>
 </head>
-<body class="selection:bg-blue-500 selection:text-white">
+<body>
 
-    <nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center">
-        <div class="text-xl font-bold tracking-tighter uppercase">KA<span class="text-blue-500">.</span></div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-            <a href="#about" class="hover:text-blue-400">About</a>
-            <a href="#skills" class="hover:text-blue-400">Expertise</a>
-            <a href="#projects" class="hover:text-blue-400">Work</a>
-            <a href="#experience" class="hover:text-blue-400">Experience</a>
-            <a href="#resumes" class="px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700">Resumes</a>
+    <nav class="fixed w-full z-50 py-6 px-10 flex justify-between items-center glass">
+        <div class="text-2xl font-black tracking-tighter">KA<span class="text-indigo-500">.</span></div>
+        <div class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-widest">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#resumes" class="px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-500 transition">Get CV</a>
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center items-center px-4 relative overflow-hidden">
-        <div class="absolute w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] -top-20 -left-20"></div>
-        <div class="absolute w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] -bottom-20 -right-20"></div>
-        
-        <h2 class="text-blue-500 font-mono mb-4 tracking-widest">Available for Summer 2026 Roles</h2>
-        <h1 class="text-5xl md:text-8xl font-black mb-6 text-center leading-tight">
-            Khushi <span class="gradient-text">Agrawal</span>
-        </h1>
-        <p class="text-lg md:text-2xl text-slate-400 max-w-3xl text-center leading-relaxed">
-            Master’s in Computer Science @ <span class="text-white border-b-2 border-maroon-600">ASU</span>. 
-            Focused on building <span class="text-blue-400 italic font-medium">high-throughput data pipelines</span> and 
-            <span class="text-purple-400 italic font-medium">generative AI agents</span> that solve real-world complexities.
-        </p>
-        <div class="mt-10 flex gap-4">
-            <a href="#projects" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:scale-105 transition">Explore Projects</a>
-            <a href="https://linkedin.com/in/khushi-agrawal-83aa0a202/" class="px-8 py-4 glass font-bold rounded-full hover:bg-white/10 transition">LinkedIn</a>
-        </div>
-    </section>
+    <section class="min-h-screen flex flex-col justify-center items-center relative px-6">
+        <div class="hero-shape w-64 h-64 bg-indigo-600 top-20 left-20 rounded-full"></div>
+        <div class="hero-shape w-96 h-96 bg-rose-500 bottom-10 right-10 rounded-full"></div>
 
-    <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="glass p-8 md:p-12 rounded-3xl">
-            <h3 class="text-3xl font-bold mb-6">The 4.0 GPA Approach</h3>
-            <p class="text-slate-300 text-lg leading-relaxed mb-6">
-                I am a systems-oriented engineer with a deep foundation in **Computer Science (CGPA: 4.0/4.0)**. 
-                My expertise lies in bridge-building: connecting complex **Big Data ETL** processes with **LLM-driven intelligence**. 
-                From processing **2M+ daily records** at DruvStar to building **containerized execution engines**, I thrive 
-                at the intersection of scalability, security, and intelligence.
+        <div class="text-center">
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-none">
+                Innovating with <br><span class="text-gradient font-black">Code & Data.</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                <b>Master of Science in Computer Science</b> at ASU. <br>
+                Specializing in AI-driven pipelines and high-scale software architecture.
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-4 rounded-xl bg-white/5"><h4 class="text-2xl font-bold text-blue-500">4.0</h4><p class="text-xs uppercase text-slate-500">Master's GPA</p></div>
-                <div class="p-4 rounded-xl bg-white/5"><h4 class="text-2xl font-bold text-blue-500">2M+</h4><p class="text-xs uppercase text-slate-500">Daily Records</p></div>
-                <div class="p-4 rounded-xl bg-white/5"><h4 class="text-2xl font-bold text-blue-500">10K+</h4><p class="text-xs uppercase text-slate-500">Users Impacted</p></div>
-                <div class="p-4 rounded-xl bg-white/5"><h4 class="text-2xl font-bold text-blue-500">AWS</h4><p class="text-xs uppercase text-slate-500">Certified</p></div>
+            <div class="flex gap-4 justify-center">
+                <a href="#about" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:invert transition">Me in 30 Seconds</a>
+                <a href="#projects" class="glass px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">View Portfolio</a>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 px-6 bg-slate-900/50">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-4xl font-bold">Selected Works</h2>
-                    <p class="text-slate-400 mt-2">Filter by domain</p>
+    <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="w-full aspect-[4/5] bg-slate-800 rounded-3xl overflow-hidden border-2 border-white/10 relative group">
+                    <img src="https://via.placeholder.com/600x800" alt="Khushi Agrawal" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-slate-500 font-bold uppercase tracking-widest text-sm">Profile Image Placeholder</span>
+                    </div>
                 </div>
+            </div>
+            
+            <div>
+                <h2 class="text-4xl font-extrabold mb-6">Hello, I'm <span class="text-indigo-400">Khushi</span>.</h2>
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                    I am a tech enthusiast currently pursuing my **Master's at Arizona State University (GPA 4.0/4.0)**. 
+                    I love building systems that handle massive data—like my work processing **2 million records daily** at DruvStar. 
+                    I'm a "T-shaped" developer: I have a wide range of skills in Full-Stack and SDE, but I dive deep into **AI and Data Engineering**.
+                </p>
+                
+                <h3 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">When I'm not coding:</h3>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="interest-chip px-5 py-2 rounded-full text-indigo-300 text-sm font-bold flex items-center gap-2">
+                        <i class="fas fa-utensils"></i> Cooking
+                    </span>
+                    <span class="interest-chip px-5 py-2 rounded-full text-rose-300 text-sm font-bold flex items-center gap-2">
+                        <i class="fas fa-palette"></i> Painting
+                    </span>
+                    <span class="interest-chip px-5 py-2 rounded-full text-emerald-300 text-sm font-bold flex items-center gap-2">
+                        <i class="fas fa-bolt"></i> Dancing
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-[#080808]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-16 text-center">Professional <span class="text-indigo-500">Journey</span></h2>
+            
+            <div class="space-y-12">
+                <div class="glass p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-black">Data Analyst Engineer Intern</h3>
+                            <p class="text-indigo-400 font-bold">DruvStar • Tempe, AZ</p>
+                        </div>
+                        <span class="text-slate-500 font-mono">May 2025 – Present</span>
+                    </div>
+                    <ul class="text-slate-400 space-y-2 list-disc list-inside">
+                        <li>Designing **AI-powered data classification pipelines** processing **20K+ documents**.</li>
+                        <li>Built high-throughput microservices using **Docker and Kafka**, increasing throughput by **3x**.</li>
+                        <li>Automated PII protection using **Microsoft Presidio** for zero-trust AWS environments.</li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-black">Full Stack Developer Intern</h3>
+                            <p class="text-rose-400 font-bold">Ataloud Technologies • Mumbai, India</p>
+                        </div>
+                        <span class="text-slate-500 font-mono">Sep 2022 – Mar 2023</span>
+                    </div>
+                    <ul class="text-slate-400 space-y-2 list-disc list-inside">
+                        <li>Developed **120+ responsive screens** in ReactJS/Next.js for **10,000+ active users**.</li>
+                        <li>Integrated **40+ REST APIs**, streamlining data flow and reducing page load to **1.8 seconds**.</li>
+                        <li>Improved usability ratings from **3.9 to 4.7/5.0** through intuitive UI/UX redesigns.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-extrabold mb-16">Selected <span class="text-indigo-500">Builds</span></h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="group border-b border-white/10 pb-10">
+                <div class="overflow-hidden rounded-2xl mb-6 bg-slate-900 aspect-video flex items-center justify-center border border-white/5">
+                    <i class="fas fa-robot text-5xl text-indigo-500"></i>
+                </div>
+                <h3 class="text-2xl font-black mb-2">LLMind</h3>
+                <p class="text-slate-400 mb-6">Analyzed **1M+ financial tweets** using PySpark and FinBERT to achieve **96.5% accuracy** in sentiment forecasting.</p>
                 <div class="flex gap-2">
-                    <button class="px-4 py-1 rounded-full text-sm bg-blue-600">All</button>
-                    <button class="px-4 py-1 rounded-full text-sm glass">AI</button>
-                    <button class="px-4 py-1 rounded-full text-sm glass">Data</button>
+                    <span class="text-[10px] font-bold px-3 py-1 bg-white/5 rounded uppercase">PySpark</span>
+                    <span class="text-[10px] font-bold px-3 py-1 bg-white/5 rounded uppercase">LLMs</span>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="project-card glass rounded-3xl p-8 border border-white/5">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-blue-500/10 p-3 rounded-2xl text-blue-500"><i class="fas fa-brain text-2xl"></i></div>
-                        <div class="flex gap-3 text-slate-500"><i class="fab fa-github hover:text-white"></i><i class="fas fa-external-link-alt hover:text-white"></i></div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">LLMind: Sentiment Forecasting</h3>
-                    <p class="text-slate-400 mb-6 italic text-sm font-mono">PySpark • FinBERT • GPT-4 • Prometheus</p>
-                    <p class="text-slate-300 leading-relaxed">
-                        Engineered a multi-stage pipeline processing **1M+ financial tweets**. Optimized model reasoning via FinBERT, achieving **96.5% accuracy** on market movement predictions.
-                    </p>
+            <div class="group border-b border-white/10 pb-10">
+                <div class="overflow-hidden rounded-2xl mb-6 bg-slate-900 aspect-video flex items-center justify-center border border-white/5">
+                    <i class="fas fa-terminal text-5xl text-rose-500"></i>
                 </div>
-
-                <div class="project-card glass rounded-3xl p-8 border border-white/5">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-purple-500/10 p-3 rounded-2xl text-purple-500"><i class="fas fa-microchip text-2xl"></i></div>
-                        <div class="flex gap-3 text-slate-500"><i class="fab fa-github hover:text-white"></i><i class="fas fa-external-link-alt hover:text-white"></i></div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Containerized Online Judge</h3>
-                    <p class="text-slate-400 mb-6 italic text-sm font-mono">Docker • Kafka • Django • Heroku</p>
-                    <p class="text-slate-300 leading-relaxed">
-                        Architected a secure, multi-tenant environment for real-time code execution. Used **Kafka** to handle high-concurrency submissions from **100+ users** simultaneously.
-                    </p>
+                <h3 class="text-2xl font-black mb-2">Online Judge</h3>
+                <p class="text-slate-400 mb-6">A multi-tenant **containerized execution system** using Docker and Kafka to support **100+ concurrent users** safely.</p>
+                <div class="flex gap-2">
+                    <span class="text-[10px] font-bold px-3 py-1 bg-white/5 rounded uppercase">Docker</span>
+                    <span class="text-[10px] font-bold px-3 py-1 bg-white/5 rounded uppercase">Django</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="resumes" class="py-24 px-6 max-w-5xl mx-auto">
-        <h2 class="text-center text-3xl font-bold mb-12">The Resume Vault</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="resumes/Resume_ML_AI.pdf" class="glass p-6 rounded-2xl hover:bg-blue-600/20 text-center transition group">
-                <i class="fas fa-robot mb-4 text-3xl text-blue-400 group-hover:scale-110 transition"></i>
-                <h4 class="font-bold">AI / ML Engineer</h4>
-                <p class="text-xs text-slate-500 mt-2 italic font-mono uppercase">PyTorch, LLMs, Agents</p>
-            </a>
-            <a href="resumes/Resume_Data_Eng.pdf" class="glass p-6 rounded-2xl hover:bg-green-600/20 text-center transition group">
-                <i class="fas fa-database mb-4 text-3xl text-green-400 group-hover:scale-110 transition"></i>
-                <h4 class="font-bold">Data Engineer</h4>
-                <p class="text-xs text-slate-500 mt-2 italic font-mono uppercase">Spark, Kafka, ETL</p>
-            </a>
-            <a href="resumes/Resume_SDE.pdf" class="glass p-6 rounded-2xl hover:bg-purple-600/20 text-center transition group">
-                <i class="fas fa-code mb-4 text-3xl text-purple-400 group-hover:scale-110 transition"></i>
-                <h4 class="font-bold">SDE / Full-Stack</h4>
-                <p class="text-xs text-slate-500 mt-2 italic font-mono uppercase">React, Django, AWS</p>
-            </a>
+    <section id="resumes" class="py-24 bg-indigo-600">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black mb-6 italic text-white">Need a specific version?</h2>
+            <p class="text-indigo-100 mb-12 text-lg">I've tailored my experience for different roles. Pick the one that fits your team.</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <a href="resumes/Resume_ML_AI.pdf" class="p-4 bg-white/10 rounded-xl hover:bg-white text-xs font-black uppercase text-white hover:text-indigo-600 transition">AI/ML</a>
+                <a href="resumes/Resume_Data_Eng.pdf" class="p-4 bg-white/10 rounded-xl hover:bg-white text-xs font-black uppercase text-white hover:text-indigo-600 transition">Data Eng</a>
+                <a href="resumes/Resume_SDE.pdf" class="p-4 bg-white/10 rounded-xl hover:bg-white text-xs font-black uppercase text-white hover:text-indigo-600 transition">SDE</a>
+                <a href="resumes/Resume_FullStack.pdf" class="p-4 bg-white/10 rounded-xl hover:bg-white text-xs font-black uppercase text-white hover:text-indigo-600 transition">Full Stack</a>
+                <a href="resumes/Resume_Data_Analyst.pdf" class="p-4 bg-white/10 rounded-xl hover:bg-white text-xs font-black uppercase text-white hover:text-indigo-600 transition">Data Analyst</a>
+            </div>
         </div>
     </section>
 
-    <footer class="py-20 border-t border-white/5 text-center">
-        <p class="text-slate-500">Built with Code & Passion • Khushi Agrawal 2025</p>
-        <div class="flex justify-center gap-6 mt-6">
-            <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-github"></i></a>
-            <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:kagraw22@asu.edu" class="text-slate-400 hover:text-white"><i class="fas fa-envelope"></i></a>
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="flex justify-center gap-8 mb-8 text-xl">
+            <a href="#" class="hover:text-indigo-500 transition"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/khushi-agrawal-83aa0a202/" class="hover:text-indigo-500 transition"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:kagraw22@asu.edu" class="hover:text-indigo-500 transition"><i class="fas fa-envelope"></i></a>
         </div>
+        <p class="text-slate-600 text-xs font-bold uppercase tracking-widest">&copy; 2025 Khushi Agrawal. Built at ASU.</p>
     </footer>
 
 </body>
