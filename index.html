@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi Agrawal | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-white">
+        <h1 class="text-6xl font-extrabold text-slate-800 mb-4">Khushi Agrawal</h1>
+        <p class="text-xl text-slate-600 mb-8 max-w-2xl">
+            MS in Computer Science at <span class="text-maroon-600 font-bold">Arizona State University</span>. 
+            Building scalable data foundations and intelligent AI systems.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#projects" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition">View My Work</a>
+            <a href="#resumes" class="border-2 border-slate-800 px-8 py-3 rounded-full font-bold hover:bg-slate-800 hover:text-white transition">Download Resumes</a>
+        </div>
+    </header>
+
+    <section class="py-20 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center underline decoration-blue-500">Technical Arsenal</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+                <i class="fas fa-brain text-blue-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">AI & Machine Learning</h3>
+                <p class="text-sm text-slate-600">LLMs (GPT-4, Claude), FinBERT, TensorFlow, PyTorch, MLflow.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+                <i class="fas fa-database text-green-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Data Engineering</h3>
+                <p class="text-sm text-slate-600">PySpark, Kafka, Hadoop, Snowflake, ETL Pipelines, NoSQL.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+                <i class="fas fa-code text-purple-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">SDE & Full Stack</h3>
+                <p class="text-sm text-slate-600">ReactJS, Next.js, Django, Java, Docker, AWS (Certified).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 tracking-widest uppercase">AI & Data Eng</span>
+                        <h3 class="text-2xl font-bold mt-2">LLMind</h3>
+                        <p class="text-slate-600 mt-2">Processed 1M+ tweets using PySpark ETL. Built sentiment-driven forecasting with 96.5% accuracy on MSFT.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-xs rounded-full">PySpark</span>
+                            <span class="px-3 py-1 bg-slate-100 text-xs rounded-full">FinBERT</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 tracking-widest uppercase">SDE & Security</span>
+                        <h3 class="text-2xl font-bold mt-2">Containerized Online Judge</h3>
+                        <p class="text-slate-600 mt-2">Multi-tenant system using Docker/Kafka. Secured 100+ concurrent executions with sub-second response.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-xs rounded-full">Docker</span>
+                            <span class="px-3 py-1 bg-slate-100 text-xs rounded-full">Django</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resumes" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-10">Download Specialized Resumes</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="resumes/Resume_ML_AI.pdf" class="hover:underline">AI / ML Engineer</a>
+                <a href="resumes/Resume_Data_Eng.pdf" class="hover:underline">Data Engineer</a>
+                <a href="resumes/Resume_SDE.pdf" class="hover:underline">Software Engineer</a>
+                <a href="resumes/Resume_FullStack.pdf" class="hover:underline">Full Stack Dev</a>
+                <a href="resumes/Resume_Data_Analyst.pdf" class="hover:underline">Data Analyst</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-slate-900 text-white text-center">
+        <p>&copy; 2025 Khushi Agrawal | kagraw22@asu.edu</p>
+    </footer>
+
+</body>
+</html>
